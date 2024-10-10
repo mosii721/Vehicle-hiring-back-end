@@ -1,0 +1,390 @@
+
+
+
+  ###all users
+  
+ GET http://localhost:3000/users/31
+
+
+### insert users
+
+POST http://localhost:3000/register
+Content-Type: application/json
+Accept: application/json
+
+ {
+   
+    "full_name": "Yamal",
+    "email": "Yamal@gmail.com",
+    "contact_phone": 455555,
+    "address": "kutus",
+    "password": "mmm",
+    "role": "user"
+   
+   
+   }
+   
+
+    
+
+
+###insert a new user
+ POST http://localhost:3000/register
+  Content-Type: application/json
+  Accept: application/json
+
+   {
+    "user_id": 5,
+    "full_name": "nnnn",
+   "password": "mmm",
+    "email": "nnn@gmail.com",
+    "role": "admin"
+   
+   
+   }
+
+
+
+
+
+###
+  POST http://localhost:3000/login
+    Content-Type: application/json
+
+    {    
+        "email": "ray@gmail.com",
+        "password": "mmm"
+   
+
+    }
+
+###admin 
+  GET http://localhost:3000/all
+Authorization:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MzEsImVtYWlsIjoicmF5QGdtYWlsLmNvbSIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzI2ODIyMjU3LCJleHAiOjE3MjY4MzMwNTd9.YbJt-lJZj9tzX0umuiDzQ8KRysXalF-k7fiK_gS2E6Y
+
+   ###
+POST   http://localhost:8000/login
+     Content-Type: application/json
+
+    {
+       "username": "zinadene",
+   "password": "ddd"
+
+    }
+
+###user // non admin
+GET http://localhost:3000/users/
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJwbnBtQGdtYWlsLmNvbSIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTcyMDc4NjMyMiwiZXhwIjoxNzIwNzk3MTIyfQ.vmbziE9MIgjRgIbXWqgvfdp4z5xYOrK8Af8ya-a-X7g
+
+
+### delete  user
+
+DELETE http://localhost:3000/users/5
+
+
+### Bookings
+GET http://localhost:3000/bookings/
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJwbnBtQGdtYWlsLmNvbSIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTcyMDc4NjMyMiwiZXhwIjoxNzIwNzk3MTIyfQ.vmbziE9MIgjRgIbXWqgvfdp4z5xYOrK8Af8ya-a-X7g
+
+
+
+
+
+
+
+### insert Bookings
+
+POST http://localhost:3000/bookings/
+Content-Type: application/json
+Accept: application/json
+
+{
+    
+    "user_id": 2,
+    "vehicle_id": 1,
+    "location_id": 2,
+    "booking_date": "2022-02-02",
+    "return_date": "2022-02-08",
+    "total_amount": 399000,
+    "booking_status": "Pending"
+}
+
+### update  Bookings
+
+PUT http://localhost:3000/bookings/2
+Content-Type: application/json
+Accept: application/json
+
+{
+   
+}
+
+### delete  Bookings
+
+DELETE http://localhost:3000/
+
+
+
+
+
+
+
+### get Customer Support
+
+
+GET http://localhost:3000/customer-support/
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJwbnBtQGdtYWlsLmNvbSIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTcyMDY5MzQwOSwiZXhwIjoxNzIwNzA0MjA5fQ.aoAtduKhEL14JUpcnNBeO6sx1J5oKyXajsvKxViDRQ8
+
+###insert Customer Support
+
+POST http://localhost:3000/customer-support
+Content-Type: application/json
+Accept: application/json
+
+{
+         
+    "user_id": 1,
+    "subject": "Screen",
+    "description": "Screen Failure",
+    "status": "Active"
+}
+        
+
+
+
+
+###update Customer Support
+
+PUT http://localhost:3000/customer-support/2
+Content-Type: application/json
+Accept: application/json
+
+{
+         "status": "Pending"
+
+}
+
+###delete Customer Support
+
+DELETE http://localhost:3000/customer-support/3
+
+
+
+
+
+
+###get fleet
+
+GET http://localhost:3000/fleet/
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJwbnBtQGdtYWlsLmNvbSIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTcyMDY5MzQwOSwiZXhwIjoxNzIwNzA0MjA5fQ.aoAtduKhEL14JUpcnNBeO6sx1J5oKyXajsvKxViDRQ8
+###insert fleet
+
+POST http://localhost:3000/fleet
+Content-Type: application/json
+Accept: application/json
+
+ {
+    
+    "vehicle_id": 2,
+    "acquisition_date": "2022-05-10",
+    "depreciation_rate": 10,
+    "current_value": 340000,
+    "maintenance_cost": 4455,
+    "status": "Active"
+    }
+
+###update fleet
+
+PUT http://localhost:3000/fleet/4
+Content-Type: application/json
+Accept: application/json
+
+{
+  "current_value": 13000
+}
+
+###delete fleet
+
+DELETE http://localhost:3000/
+
+
+
+
+
+### get location
+
+GET http://localhost:3000/locations/
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJwbnBtQGdtYWlsLmNvbSIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTcyMDY5MzQwOSwiZXhwIjoxNzIwNzA0MjA5fQ.aoAtduKhEL14JUpcnNBeO6sx1J5oKyXajsvKxViDRQ8
+###insert location
+
+POST http://localhost:3000/locations
+Content-Type: application/json
+Accept: application/json
+
+{
+   
+    "name": "Maldives",
+    "address": "kansas2333",
+    "contact_phone": 78993
+
+
+}
+
+###update location
+
+PUT http://localhost:3000/locations/4
+Content-Type: application/json
+Accept: application/json
+
+{
+   
+ "name": "Kentucky"
+
+
+}
+
+###delete location
+
+DELETE http://localhost:3000/locations/4
+
+
+
+
+
+
+### get payments
+
+GET http://localhost:3000/payments/1
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJwbnBtQGdtYWlsLmNvbSIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTcyMDY5MzQwOSwiZXhwIjoxNzIwNzA0MjA5fQ.aoAtduKhEL14JUpcnNBeO6sx1J5oKyXajsvKxViDRQ8
+###insert payments
+
+POST http://localhost:3000/payments
+Content-Type: application/json
+Accept: application/json
+
+{
+        
+    
+    "booking_id": 59,
+    "amount": 77899,
+    "payment_status": "Pending",
+    "payment_date": "2012-07-9",
+    "payment_method": "Bank",
+    "transaction_id": 455   
+
+}
+      
+
+
+
+
+###update payment
+
+PUT http://localhost:3000/payments/1
+Content-Type: application/json
+Accept: application/json
+
+{
+   
+     "payment_status": "Pending"
+
+
+}
+
+###delete payment
+
+DELETE http://localhost:3000/
+
+
+
+
+
+
+
+###get vehicles
+
+GET http://localhost:3000/vehicles/
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJwbnBtQGdtYWlsLmNvbSIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTcyMDY5MzQwOSwiZXhwIjoxNzIwNzA0MjA5fQ.aoAtduKhEL14JUpcnNBeO6sx1J5oKyXajsvKxViDRQ8
+###insert vehicles
+
+POST http://localhost:3000/vehicles
+Content-Type: application/json
+Accept: application/json
+
+{
+     
+    "vehicle_id": 6,
+    "rental_rate": 45555,
+    "availability": "Inactive"
+
+
+}
+
+###update vehicles
+
+PUT http://localhost:3000/vehicles/2
+Content-Type: application/json
+Accept: application/json
+
+{
+   "rental_rate": 6000
+
+}
+
+###delete vehicle
+
+DELETE http://localhost:3000/vehicles/3
+
+
+
+
+
+
+
+###get vehicle specific information
+
+GET http://localhost:3000/vehicle-specifications/1
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJwbnBtQGdtYWlsLmNvbSIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTcyMDY5MzQwOSwiZXhwIjoxNzIwNzA0MjA5fQ.aoAtduKhEL14JUpcnNBeO6sx1J5oKyXajsvKxViDRQ8
+
+###insert 
+
+POST http://localhost:3000/vehicle-specifications
+Content-Type: application/json
+Accept: application/json
+
+{
+     
+    "manufacturer": "Mercedes",
+    "model": "SUV",
+    "year": 1970,
+    "fuel_type": "diesel",
+    "engine_capacity": 3400,
+    "transmission": "good",
+    "seating_capacity": 3,
+    "color": "white",
+    "features": "good"
+
+}
+
+###update 
+
+PUT http://localhost:3000/vehicle-specifications/4
+Content-Type: application/json
+Accept: application/json
+
+{
+       "features": "double precision"
+
+}
+
+###delete 
+
+DELETE http://localhost:3000/vehicle-specifications/4
+
+
+
+
+
+
+
+
